@@ -1,0 +1,126 @@
+/* header start */
+
+.navbar a:hover {
+    font-weight: 700;
+}
+
+
+.soc-list{
+    margin-top: 8px;
+}
+
+/* Social Colors */
+
+.fa-twitter:hover{
+    color: #1DA1F2;
+}
+.fa-github:hover{
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+.fa-envelope-o:hover{
+    color: red;
+}
+.fa-linkedin:hover{
+    color: #2867B2;
+}
+
+header{
+    background-image: url(../media/ocean1.jpeg);
+    height: 100vh;
+    color: white;
+}
+
+.top-nav-section{
+    background-color: rgb(0, 128, 128, 0.3);
+}
+
+.top-nav-section a{
+    color: white !important;
+    
+}
+
+/* popup/ canvas */
+
+#canvas1{
+    z-index: 99;
+    position: fixed;
+    background: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.full-screen{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.9);
+    color: white;
+}
+
+.flex-container-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.hidden{
+    display: none;
+}
+
+/* popup/ canvas end */
+
+
+/* header end */
+
+/* main start */
+
+.gallery-section{
+    margin-bottom: 30px;
+}
+
+.about-section{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1200px){
+    
+    .gallery-section div .project{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px){
+    .about-section .about-image{
+        margin-bottom: 20px;
+    }
+    
+}
+.gallery-header{
+    margin-bottom: 20px;
+}
+.project{
+    border: 1px solid black;
+}
+.project:hover{
+    border: none;
+}
+
+/* main end */
+
+/* footer start */
+
+footer{
+    background-color: lightblue;
+    color: darkblue;
+    font-weight: 500;
+}
+
+/* footer end */
