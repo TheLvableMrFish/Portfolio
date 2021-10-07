@@ -1,6 +1,55 @@
 // https://www.youtube.com/watch?v=Yvz_axxWG4Y
 // canvas is atributed Franks Lab
 
+//w3 site for the modal
+// Get the modal
+var modal = document.getElementById("myModal");
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var img = document.getElementById("proj1");
+var img1 = document.getElementById("proj2");
+var img2 = document.getElementById("proj3");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close")[1];
+var span2 = document.getElementsByClassName("close")[2];
+
+
+// When the user clicks the button, open the modal 
+img.onclick = function() {
+  modal.style.display = "block";
+}
+img1.onclick = function() {
+  modal1.style.display = "block";
+}
+img2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+span1.onclick = function() {
+  modal1.style.display = "none";
+}
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal || event.target == modal1 || event.target == modal2) {
+    modal.style.display = "none";
+    modal1.style.display = "none";
+    modal2.style.display = "none";
+  }
+}
+
+
 const popup = document.querySelector('.full-screen');
 let magic = false;
 
@@ -16,59 +65,62 @@ if(magic === true){
     togglePopup();
 }
 
-let person = true;
-let person1 = true;
-let person2 = true;
-function changeImage1()
-{
-    if(person){
-var img = document.getElementById("projShow");
-img.src="media/proj1.png";
-person = false;
-person1 = true;
-person2 = true;
-    }
-    else{
-        var img = document.getElementById("projShow");
-        img.src="media/yeeyee.jpg"; 
-        person = true;
-    }
-return false;
-}
+// this was to change the image of myself to the one of the gallery images
+//I found the modal and changed it because it did what I wanted much better
 
-function changeImage2()
-{
-    if(person1){
-var img = document.getElementById("projShow");
-img.src="media/proj2.png";
-person = true;
-person1 = false;
-person2 = true;
-    }
-    else{
-        var img = document.getElementById("projShow");
-        img.src="media/yeeyee.jpg"; 
-        person1 = true;
-    }
-return false;
-}
+// let person = true;
+// let person1 = true;
+// let person2 = true;
+// function changeImage1()
+// {
+//     if(person){
+// var img = document.getElementById("projShow");
+// img.src="media/proj1.png";
+// person = false;
+// person1 = true;
+// person2 = true;
+//     }
+//     else{
+//         var img = document.getElementById("projShow");
+//         img.src="media/yeeyee.jpg"; 
+//         person = true;
+//     }
+// return false;
+// }
 
-function changeImage3()
-{
-    if(person2){
-var img = document.getElementById("projShow");
-img.src="media/proj3.png";
-person = true;
-person1 = true;
-person2 = false;
-    }
-    else{
-        var img = document.getElementById("projShow");
-        img.src="media/yeeyee.jpg"; 
-        person2 = true;
-    }
-return false;
-}
+// function changeImage2()
+// {
+//     if(person1){
+// var img = document.getElementById("projShow");
+// img.src="media/proj2.png";
+// person = true;
+// person1 = false;
+// person2 = true;
+//     }
+//     else{
+//         var img = document.getElementById("projShow");
+//         img.src="media/yeeyee.jpg"; 
+//         person1 = true;
+//     }
+// return false;
+// }
+
+// function changeImage3()
+// {
+//     if(person2){
+// var img = document.getElementById("projShow");
+// img.src="media/proj3.png";
+// person = true;
+// person1 = true;
+// person2 = false;
+//     }
+//     else{
+//         var img = document.getElementById("projShow");
+//         img.src="media/yeeyee.jpg"; 
+//         person2 = true;
+//     }
+// return false;
+// }
 
 // window.addEventListener('scroll', () => {
     
@@ -116,20 +168,12 @@ canvas.addEventListener('touchmove', function(e){
     
 });
 
-canvas.addEventListener('touch', function(e){
-    mouse.x = e.x;
-    mouse.y = e.y;
-    for(let i = 0; i < 2; i++)
-    particlesArray.push(new Particle());
-    
-});
-
 canvas.addEventListener('click', function(e){
     mouse.x = e.x;
     mouse.y = e.y;
     for(let i = 0; i < 10; i++)
     particlesArray.push(new Particle());
-});
+})
 
 class Particle{
     constructor(){
