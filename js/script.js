@@ -108,12 +108,20 @@ canvas.addEventListener('mousemove', function(e){
     
 });
 
+canvas.addEventListener('touchmove', function(e){
+    mouse.x = e.x;
+    mouse.y = e.y;
+    for(let i = 0; i < 2; i++)
+    particlesArray.push(new Particle());
+    
+});
+
 canvas.addEventListener('click', function(e){
     mouse.x = e.x;
     mouse.y = e.y;
     for(let i = 0; i < 10; i++)
     particlesArray.push(new Particle());
-})
+});
 
 class Particle{
     constructor(){
