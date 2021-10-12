@@ -155,6 +155,38 @@ header{
     cursor: pointer;
   }
 
+  /* games */
+
+  .grid{
+    /* border: 1px solid; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.grid div{
+    
+    width: calc(10 0%/7);
+    height: auto;
+}
+
+#border{
+    height: calc(20vh/6);
+    width: calc(90%/7);
+    border: solid black;
+}
+
+
+.player-one{
+    background-color: red;
+    border-radius: 50%;
+}
+
+.player-two{
+    background-color: blue;
+    border-radius: 50%;
+}
+
 /* main end */
 
 /* footer start */
