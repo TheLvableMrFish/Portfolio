@@ -379,3 +379,82 @@ squares.forEach(square => square.addEventListener('click', checkBoard))
 })
 
 
+// tic tac toe
+
+document.addEventListener('DOMContentLoaded', () =>{
+    const squares = document.querySelectorAll('.grid1 div')
+    const result1 = document.querySelector('#result1')
+    const displayCurrentPlayer = document.querySelector('#current-player1')
+    let currentPlayer = 1
+
+    for (var i = 0, len = squares.length; i < len; i++)
+
+    (function(index){
+    //add an onclick to each square in your grid
+        squares[i].onclick = function(){
+        //if the square below your current square is taken, you can go ontop of it
+            if(squares[index].classList.contains('taken')){
+                alert('cant go here')
+            }
+            else if(currentPlayer === 1){
+                    squares[index].classList.add('taken')
+                    squares[index].classList.add('player-one1')
+                    //change the player
+                    currentPlayer = 2
+                    displayCurrentPlayer.innerHTML = currentPlayer
+            } else if (currentPlayer === 2){
+                    squares[index].classList.add('taken')
+                    squares[index].classList.add('player-two1')
+                    //change the player
+                    currentPlayer = 1
+                    displayCurrentPlayer.innerHTML = currentPlayer
+                }
+                //if the square below you current square is not taken, you can't go here
+            } 
+    }
+    )(i)
+
+//check the board for a win or lose
+function checkBoard(){
+    //make const that shows all winning arrays
+    const winningArrays = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+    ]
+    //now take the 3 values in each winningArrays and plug them into the squares
+    for(let y = 0; y < winningArrays.length; y++){
+        const square1 = squares[winningArrays[y][0]]
+        const square2 = squares[winningArrays[y][1]]
+        const square3 = squares[winningArrays[y][2]]
+        
+    //now check those array to see if they all have the class of player-one
+    if(
+        square1.classList.contains('player-one1') &&
+        square2.classList.contains('player-one1') &&
+        square3.classList.contains('player-one1')) {
+            result1.innerHTML = 'Player One Wins!'
+            
+        }
+    // now check to see if they all have the class name player-two
+    else if(
+        square1.classList.contains('player-two1') &&
+        square2.classList.contains('player-two1') &&
+        square3.classList.contains('player-two1')) {
+            result1.innerHTML = 'Player Two Wins!'
+            
+        }
+    }
+}
+
+
+// add an eventListener to each square that will trigger the checkBoard function on click
+squares.forEach(square => square.addEventListener('click', checkBoard))
+
+
+})
