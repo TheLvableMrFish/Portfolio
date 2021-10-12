@@ -157,6 +157,8 @@ header{
 
   /* games */
 
+  /* connect 4 */
+
   .grid{
     /* border: 1px solid; */
     display: flex;
@@ -183,6 +185,33 @@ header{
 }
 
 .player-two{
+    background-color: blue;
+    border-radius: 50%;
+}
+
+/* tic tac toe */
+
+.grid1{
+    /* border: 1px solid; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.grid1 div{
+    width: calc(100%/3.2);
+    height: calc(20vh/3);
+    border: solid black;
+}
+
+.player-one1{
+    background-color: red;
+    border-radius: 50%;
+    
+}
+
+.player-two1{
     background-color: blue;
     border-radius: 50%;
 }
